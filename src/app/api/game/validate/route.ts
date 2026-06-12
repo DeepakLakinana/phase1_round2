@@ -1,6 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { readData, writeData } from '@/lib/fileStore';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   const teamId = req.headers.get('authorization')?.split(' ')[1] || req.cookies.get('teamId')?.value;
   if (!teamId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

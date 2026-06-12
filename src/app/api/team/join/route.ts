@@ -3,6 +3,8 @@ import { readData, writeData } from '@/lib/fileStore';
 import { nanoid } from 'nanoid';
 import credentials from '@/lib/credentials.json';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request) {
   try {
     const { fullName, contactNumber } = await req.json();
